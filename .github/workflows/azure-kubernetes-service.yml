@@ -25,10 +25,10 @@ jobs:
       - uses: actions/checkout@v3
 
       # Logs in with your Azure credentials stored in GitHub secrets
-      - name: Azure login
-        uses: azure/login@v1.4.6
-        with:
-          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+      #- name: Azure login
+      #  uses: azure/login@v1.4.6
+      #  with:
+      #    creds: '${{ secrets.AZURE_CREDENTIALS }}'
 
       - name: Log into registry
         uses: docker/login-action@v1
@@ -40,4 +40,4 @@ jobs:
       # Builds and pushes an image up to your Azure Container Registry
       - name: Build and push image to ACR
         run: |
-          az acr build --file ${{ env.DOCKER_PATH }} --image ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.RESOURCE_GROUP }} .
+          az acr build --file ${{ env.DOCKER_PATH }} --image ${{ secrets.ACR_ENDPOINT }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ secrets.ACR_ENDPOINT }} -g ${{ env.RESOURCE_GROUP }} .
