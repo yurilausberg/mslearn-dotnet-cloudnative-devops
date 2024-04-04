@@ -31,7 +31,7 @@ jobs:
       #    creds: '${{ secrets.AZURE_CREDENTIALS }}'
 
       - name: Log into registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ${{ secrets.ACR_ENDPOINT }}
           username: ${{ secrets.ACR_USERNAME }}
