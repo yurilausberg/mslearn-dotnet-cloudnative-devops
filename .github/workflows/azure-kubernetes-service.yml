@@ -34,7 +34,6 @@ jobs:
         uses: azure/docker-login@v1
         with:
           login-server: '${{ secrets.ACR_ENDPOINT }}.azurecr.io'
-          registry: ${{ secrets.ACR_ENDPOINT }}
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
