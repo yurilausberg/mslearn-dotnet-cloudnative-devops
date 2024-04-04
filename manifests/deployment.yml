@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: yurilausbergmslearndotnetcloudnativedevops 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yurilausbergmslearndotnetcloudnativedevops
+  template:
+    metadata:
+      labels:
+        app: yurilausbergmslearndotnetcloudnativedevops 
+    spec:
+      containers:
+        - name: yurilausbergmslearndotnetcloudnativedevops 
+          image: acseshop4155240036.azurecr.io/yurilausbergmslearndotnetcloudnativedevops
+          ports:
+          - containerPort: 8080
