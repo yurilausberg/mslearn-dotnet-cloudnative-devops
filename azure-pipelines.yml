@@ -14,7 +14,7 @@ variables:
   dockerRegistryServiceConnection: '896ba1ee-dcfd-44a1-8abf-fde8e9a7edf2'
   imageRepository: 'yurilausbergmslearndotnetcloudnativedevops'
   containerRegistry: 'acseshop4155240036.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: '**/DockerfileProducts'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'acseshop4155240036d3d4-auth'
 
